@@ -1,0 +1,10 @@
+- name: Instala Puppet Server
+  apt:
+    name:  puppetserver
+    state: present
+    update_cache: yes
+- name: inicia servico
+  service:
+    name: puppetserver
+    state: started
+    enabled: yes

@@ -1,0 +1,12 @@
+- name: instala repo Debian
+  apt:
+    deb: "https://apt.puppetlabs.com/puppet5-release-xenial.deb"
+    state: present
+  when: ansible_os_family == "Debian"
+
+- name: instala repo RedHat
+  yum:
+    name: "https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm"
+    state: present
+  when: ansible_os_family == "RedHat"
+

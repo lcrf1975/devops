@@ -1,0 +1,8 @@
+---
+# tasks file for docker
+- name: Install
+  hosts: all
+  tasks:
+    - include: repo.yml
+#    - include: install.yml
+    - include: agent.yml

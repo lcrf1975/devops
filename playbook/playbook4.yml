@@ -1,0 +1,19 @@
+# Playbook Exemplo 01
+- name: Playbook de teste
+  hosts: automation
+  tasks:
+    - name: Instala o apache2
+      package:
+        name: httpd
+        state: present
+
+    - name: Copia o index
+      copy:
+        src: index.html
+        dest: /var/www/html/
+
+    - name: Reinia o servidor web
+      service:
+        name: httpd
+        state: restarted
+      when: ansible_os_family == 'RedHat'

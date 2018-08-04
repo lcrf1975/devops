@@ -1,0 +1,8 @@
+# Playbook Exemplo 01
+- name: primeiro comando
+  hosts: all
+  tasks:
+    - name: primeira task
+      package:
+        name: htop
+        state: absent

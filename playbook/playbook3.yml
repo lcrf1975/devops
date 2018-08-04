@@ -1,0 +1,13 @@
+# Playbook Exemplo 01
+- name: Playbook de teste
+  hosts: all
+  tasks:
+    - name: Instala o apache2
+      package:
+        name: apache2
+        state: present
+
+    - name: Copia o index
+      copy:
+        src: index.html
+        dest: /var/www/html/
